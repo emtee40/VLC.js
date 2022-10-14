@@ -283,6 +283,8 @@
         }
 
         Module._wasm_libvlc_init(vlc_opts_array.length, vlc_argv);
+        Module._free(vlc_argv);
+        Module._free(buffer);
         media_player = new MediaPlayer(Module, "emjsfile://1");
         media_player.set_volume(80);
 
